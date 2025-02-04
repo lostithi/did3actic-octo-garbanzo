@@ -1,0 +1,14 @@
+/* PART 1 */
+
+/* Insert style rules for the barchart's top level svg */
+svg.barchart {
+
+}
+
+/* Insert style rules for the barcharts's bars */
+svg.barchart rect.bar{
+    
+}
+
+/* PART 5 */
+/* Add styles for your donut and line charts */
