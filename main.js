@@ -15,27 +15,38 @@ let cities  = [
 
 // PART 1 - Build a bar chart inline
 
-let barContainer = ...;
+// let barContainer = d3.select('div#bar1');
+// let barSvg = barContainer.append('svg')
+//     .attr('height', 500)
+//     .attr('weight', 800)
+//     .classed('barchart',true)
+//     .style('border', solid 1px blue);
 
-let barSvg = ...;
-
-
-let barGroup = ...;
-
-let bars = ...;
-
+// let barGroup = barSvg.append('g');
+// let bars = barGroup.selectAll('rect.bar')
+//     .data(cities, d=>d.city)
+//     .join('rect')
+//     .attr('x',(d,i)=>i*40+5)    
+//     //ALl VALUES WILL BE MULTIPLIED BY THE GIVEN AMOUNT.
+//     //ie, 1=>First bar 45px, 2=>Second bar at 85px, 3=>Third bar at 125px
+//     .attr('height', d=>d.alt*10)
+//     .attr('width', 40)
+//     .attr("y", (d) => 500 - d.alt * 10)
+//     .style('fill', d=>d.pop<1000000?'#ba4a53':null)
+//     .style('stroke', d=>d.pop>1000000?'#381619':null)
 // PART 2 - Use a bar chart module
 
 import BarChart from './BarChart.js'; 
 
-let bar1 = ...;
+// let bar1 =  new BarChart('div#bar1', 800,500);
+let bar1 =  new BarChart('div#bar1', 700,500, [10,40,45,20]);
 
 // this line transforms the cities dataset in the generic format 
 // that BarChart expects: [[k, v], ...] 
 // we will explain it further in the next lab 
 let citiesElevation = cities.map(d=>[d.city, d.alt]); 
 
-bar1...;
+bar1.render(citiesElevation);
 
 // PART 3 & 4 - See in BarChart.js
 
@@ -55,6 +66,6 @@ let historicPop = [
     [2020,537000],[2021,543000],[2022,548000],[2023,554000]
 ];
 
-DonutChart.render(citiesPop);
+// DonutChart.render(citiesPop);
 
-LineChart.render(historicPop);
+// LineChart.render(historicPop);
