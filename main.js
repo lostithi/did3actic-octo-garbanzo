@@ -36,17 +36,22 @@ let cities  = [
 //     .style('stroke', d=>d.pop>1000000?'#381619':null)
 // PART 2 - Use a bar chart module
 
-import BarChart from './BarChart.js'; 
+// import BarChart from './BarChart.js'; 
+import ScatterPlot from './ScatterPlot.js'; 
 
 // let bar1 =  new BarChart('div#bar1', 800,500);
-let bar1 =  new BarChart('div#bar1', 700,500, [10,40,45,20]);
+// let bar1 =  new BarChart('div#bar1', 700,500, [10,40,45,20]);
+let pointclass =  new ScatterPlot('div#pointsclass', 700,500, [10,40,45,20]);
+let citiesPopulation = cities.map(d=>[d.pop, d.area]);
+console.log(citiesPopulation); 
+pointclass.render(citiesPopulation);
+
 
 // this line transforms the cities dataset in the generic format 
 // that BarChart expects: [[k, v], ...] 
 // we will explain it further in the next lab 
-let citiesElevation = cities.map(d=>[d.city, d.alt]); 
-
-bar1.render(citiesElevation);
+// let citiesElevation = cities.map(d=>[d.city, d.alt]); 
+// bar1.render(citiesElevation);
 
 // PART 3 & 4 - See in BarChart.js
 
@@ -55,7 +60,7 @@ bar1.render(citiesElevation);
 import DonutChart from './DonutChart.js';
 import LineChart from './LineChart.js';
 
-let citiesPop = cities.map(d=>[d.city, d.pop]); 
+// let citiesPop = cities.map(d=>[d.city, d.pop]); 
 
 let historicPop = [ 
     [2000,451000],[2001,454000],[2002,457000],[2003,460000], 
