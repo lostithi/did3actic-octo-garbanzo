@@ -37,14 +37,14 @@ let cities  = [
 // PART 2 - Use a bar chart module
 
 // import BarChart from './BarChart.js'; 
-import ScatterPlot from './ScatterPlot.js'; 
+// import ScatterPlot from './ScatterPlot.js'; 
 
 // let bar1 =  new BarChart('div#bar1', 800,500);
 // let bar1 =  new BarChart('div#bar1', 700,500, [10,40,45,20]);
-let pointclass =  new ScatterPlot('div#pointsclass', 700,500, [10,40,45,20]);
-let citiesPopulation = cities.map(d=>[d.pop, d.area]);
-console.log(citiesPopulation); 
-pointclass.render(citiesPopulation);
+// let pointclass =  new ScatterPlot('div#pointsclass', 700,500, [10,40,45,20]);
+// let citiesPopulation = cities.map(d=>[d.pop, d.area]);
+// console.log(citiesPopulation); 
+// pointclass.render(citiesPopulation);
 
 
 // this line transforms the cities dataset in the generic format 
@@ -57,8 +57,11 @@ pointclass.render(citiesPopulation);
 
 // PART 5 - Complete DonutChart.js and LineChart.js
 
+// import LineChart from './LineChart.js';
+// let chart =  new LineChart('div#line1', 400,400, [20,20,20,20]);
 import DonutChart from './DonutChart.js';
-import LineChart from './LineChart.js';
+// let chart =  new DonutChart('div#line1', 400,400, [20,20,20,20]);
+
 
 // let citiesPop = cities.map(d=>[d.city, d.pop]); 
 
@@ -70,7 +73,12 @@ let historicPop = [
     [2016,513000],[2017,519000],[2018,525000],[2019,531000], 
     [2020,537000],[2021,543000],[2022,548000],[2023,554000]
 ];
+let donut = new DonutChart('#donut', 500, 700, [20, 20, 20, 20]);
+// let donuthere = historicPop.map(d=>[d[0], d[1]]);
+// let citiesPopulation = cities.map(d=>[d.pop, d.area]);
 
-// DonutChart.render(citiesPop);
+// console.log(donuthere); 
+// donut.render(donuthere);
+donut.render(historicPop);
 
 // LineChart.render(historicPop);
